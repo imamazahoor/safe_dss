@@ -1,0 +1,12 @@
+{
+  "question": "c(i) Adjusting DSS alert threshold: alerts, simulated triage, fatigue proxies",
+  "cohort": "early_warning_cohort (SepsisLabel == 0 at t)",
+  "holdout_n": 26976,
+  "holdout_positives": 2580,
+  "scores": "RF Stage-1 `predict_proba` and holdout logistic `predict_proba` (same rows).",
+  "assumption_alert_rule": "Binary alert if score >= threshold; each row is one independent patient-hour (no deduping consecutive alarms per patient).",
+  "assumption_no_observed_response": "True clinician response / acknowledgment is not in the dataset; uncapped sensitivity is the upper bound if every alert were reviewed.",
+  "assumption_triage_simulation": "If more than cap=1079 alerts fire, reviewers only examine the highest-scoring alerts up to that cap (per 1000 patient-hours basis).",
+  "review_capacity_per_1000_patient_hours": 40.0,
+  "fatigue_proxies": "alerts_per_tp and fp_per_tp rise when lowering threshold: more alarms per caught case and more false alarms per true alarm."
+}
