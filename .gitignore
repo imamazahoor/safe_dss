@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Local tool caches (not part of the project)
+.ipython/
+.matplotlib/
+
+# Raw / imputed patient-level CSVs — large, license-sensitive, do not publish to GitHub
+preprocessing/*.csv
+
+# Optional readmission proxy experiment outputs (not part of main HW path)
+analysis/outputs/readmission_30d_profiles/
+
+# Readmission proxy metadata (optional; keep local if used)
+preprocessing/patient_readmission_proxy_dataset.json

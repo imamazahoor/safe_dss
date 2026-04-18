@@ -1,0 +1,39 @@
+{
+  "task": "Binary onset of sepsis in hours t+6..t+12",
+  "cohort": "early_warning_cohort (SepsisLabel == 0 at t)",
+  "n_rows": 129557,
+  "positive_rate": 0.0996241036763741,
+  "holdout_auroc_logistic": 0.6002649118993963,
+  "holdout_auprc_logistic": 0.1306922371323127,
+  "holdout_auroc_hist_gbrt": 0.6006762927204994,
+  "holdout_auprc_hist_gbrt": 0.12797958670104526,
+  "holdout_report_hist_gbrt": {
+    "0": {
+      "precision": 0.9218926629703397,
+      "recall": 0.7020003279226102,
+      "f1-score": 0.7970586182021269,
+      "support": 24396.0
+    },
+    "1": {
+      "precision": 0.13442076437671152,
+      "recall": 0.4375968992248062,
+      "f1-score": 0.2056653611440022,
+      "support": 2580.0
+    },
+    "accuracy": 0.6767126334519573,
+    "macro avg": {
+      "precision": 0.5281567136735256,
+      "recall": 0.5697986135737082,
+      "f1-score": 0.5013619896730646,
+      "support": 26976.0
+    },
+    "weighted avg": {
+      "precision": 0.8465784022062693,
+      "recall": 0.6767126334519573,
+      "f1-score": 0.7404974303607138,
+      "support": 26976.0
+    }
+  },
+  "holdout_auroc_rf_stage1": 0.6170530243234689,
+  "holdout_auprc_rf_stage1": 0.12351044981410535
+}
