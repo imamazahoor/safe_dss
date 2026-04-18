@@ -50,5 +50,17 @@
     "description": "c(ii) frozen RF holdout stability under missing/delayed key labs",
     "csv": "c2_lab_missing_delay_robustness.csv",
     "assumptions_json": "c2_lab_robustness_assumptions.json"
-  }
+  },
+  "c3_vitals_vs_full_artifacts": {
+    "description": "c(iii) retrained RF on vitals-only / non-lab / full; same holdout",
+    "csv": "c3_vitals_vs_full_holdout.csv",
+    "assumptions_json": "c3_vitals_vs_full_assumptions.json",
+    "vitals_only_importance_csv": "c3_rf_feature_importance_vitals_only.csv"
+  },
+  "holdout_auroc_rf_vitals_only": 0.5556791540994774,
+  "holdout_auprc_rf_vitals_only": 0.1148833335684859,
+  "holdout_auroc_rf_non_lab_features": 0.6236987557370568,
+  "holdout_auprc_rf_non_lab_features": 0.1318323845425537,
+  "holdout_auroc_rf_vitals_plus_iculos": 0.6317708790105381,
+  "holdout_auprc_rf_vitals_plus_iculos": 0.1402270982344247
 }
