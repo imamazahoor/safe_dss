@@ -35,5 +35,20 @@
     }
   },
   "holdout_auroc_rf_stage1": 0.6170530243234689,
-  "holdout_auprc_rf_stage1": 0.12351044981410535
+  "holdout_auprc_rf_stage1": 0.12351044981410535,
+  "c1_alert_threshold_whatif_artifacts": {
+    "description": "c(i) threshold sweep on holdout; see c1_threshold_whatif_assumptions.json for explicit assumptions",
+    "csv": "threshold_alert_tradeoff_holdout.csv",
+    "assumptions_json": "c1_threshold_whatif_assumptions.json",
+    "rf_snapshots_json": "c1_rf_operating_point_snapshots.json",
+    "serialized_models_joblib": [
+      "rf_stage1_holdout.joblib",
+      "logistic_stage1_holdout.joblib"
+    ]
+  },
+  "c2_lab_missing_delay_artifacts": {
+    "description": "c(ii) frozen RF holdout stability under missing/delayed key labs",
+    "csv": "c2_lab_missing_delay_robustness.csv",
+    "assumptions_json": "c2_lab_robustness_assumptions.json"
+  }
 }

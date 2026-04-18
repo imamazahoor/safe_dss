@@ -1,0 +1,11 @@
+{
+  "question": "c(iii) Vitals-only / no-lab vs full feature RF performance",
+  "cohort": "early_warning_cohort (SepsisLabel == 0 at t)",
+  "holdout_n": 26976,
+  "full_model": "rf_stage1 trained on all columns in feature_names",
+  "vitals_only_definition": "HR, MAP, O2Sat, Temp, Resp, SBP, DBP, SaO2, FiO2, EtCO2 plus matching _roll3 and _delta1 columns if present.",
+  "non_lab_definition": "Columns whose stem (strip _roll3/_delta1) is not in LAB_STEMS (chemistry/hematology/ABG-style labs).",
+  "sensitivity_note": "Same RF hyperparameters and same GroupShuffleSplit holdout as Stage 1; only the input column mask changes.",
+  "n_vitals_only_features": 15,
+  "n_non_lab_features": 21
+}
