@@ -85,11 +85,13 @@ From repo root:
 
 ```bash
 cd deployment/backend_dev/backend
+deactivate 2>/dev/null || true
+rm -rf .venv
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 Backend should be available at:
@@ -101,6 +103,8 @@ Notes:
 - Backend default DB connection is:
   `postgresql+psycopg2://safe_user:safe_pass@localhost:5432/safe_dss`
 - If your teammate uses a different DB host/port, set env vars as needed before launch.
+- If the repo path changed (for example moved folders), recreating `.venv` avoids
+  stale interpreter paths in scripts like `uvicorn`.
 
 ---
 
