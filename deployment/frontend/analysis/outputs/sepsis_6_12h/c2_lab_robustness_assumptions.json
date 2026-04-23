@@ -1,0 +1,29 @@
+{
+  "question": "c(ii) Prediction stability when key labs are missing or delayed",
+  "cohort": "early_warning_cohort (SepsisLabel == 0 at t)",
+  "model": "Frozen rf_stage1 trained on full inputs; holdout counterfactuals only.",
+  "key_labs_used": [
+    "Lactate",
+    "WBC",
+    "Creatinine",
+    "Platelets",
+    "BUN",
+    "Glucose"
+  ],
+  "missingness_columns_masked": [
+    "BUN",
+    "Creatinine",
+    "Creatinine_roll3",
+    "Glucose",
+    "Glucose_roll3",
+    "Lactate",
+    "Lactate_delta1",
+    "Lactate_roll3",
+    "Platelets",
+    "WBC",
+    "WBC_roll3"
+  ],
+  "imputation_assumption": "SimpleImputer(median) fit on X_tr only; applied before predict_proba (same column order as X).",
+  "delay_assumption": "Per patient_id, base lab at ICULOS replaced with value at ICULOS - delta_hours when present; else NaN then median imputed.",
+  "limitation_roll_features": "Rolling/delta lab features are not recomputed under delay-only scenarios (only base labs lagged)."
+}
