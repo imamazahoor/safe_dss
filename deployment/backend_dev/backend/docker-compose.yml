@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: safe_dss_postgres
+    environment:
+      POSTGRES_DB: safe_dss
+      POSTGRES_USER: safe_user
+      POSTGRES_PASSWORD: safe_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - safe_dss_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U safe_user -d safe_dss"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  safe_dss_pgdata:
